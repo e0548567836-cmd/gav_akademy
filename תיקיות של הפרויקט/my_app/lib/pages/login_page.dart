@@ -6,7 +6,6 @@ import 'package:my_app/widgets/custom_text_field.dart';
 import 'register_screen.dart';
 import 'dashboard_screen.dart';
 import 'management_page.dart';
-import 'google_login_webview.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -33,6 +32,7 @@ class _LoginPageState extends State<LoginPage> {
 
     try {
       final response = await ApiService.login(id, password);
+
       if (!mounted) return;
 
       if (response.statusCode == 200) {
@@ -60,13 +60,6 @@ class _LoginPageState extends State<LoginPage> {
         context,
       ).showSnackBar(const SnackBar(content: Text('שגיאת תקשורת עם השרת')));
     }
-  }
-
-  Future<void> _handleGoogleLogin() async {
-    await Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => const GoogleLoginWebView()),
-    );
   }
 
   @override
@@ -118,25 +111,6 @@ class _LoginPageState extends State<LoginPage> {
                   child: const Text(
                     'כניסה',
                     style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                ),
-                const SizedBox(height: 12),
-                OutlinedButton.icon(
-                  onPressed: _handleGoogleLogin,
-                  icon: Image.network(
-                    'https://developers.google.com/identity/images/g-logo.png',
-                    height: 24,
-                  ),
-                  label: const Text(
-                    'כניסה עם Google',
-                    style: TextStyle(color: Colors.black87, fontSize: 16),
-                  ),
-                  style: OutlinedButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 55),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    side: const BorderSide(color: Colors.grey),
                   ),
                 ),
                 TextButton(

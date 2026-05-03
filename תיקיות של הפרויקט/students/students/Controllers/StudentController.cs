@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication;
 using students.Helpers;
 using students.Models;
 using students.Data;
@@ -24,8 +23,10 @@ namespace students.Controllers
         {
             if (newStudent == null) return BadRequest("לא התקבלו נתונים");
             if (!IsValid.IsValidId(newStudent.StudentId)) return BadRequest("מספר תעודת הזהות אינו תקין");
+
             var exists = await _context.Students.AnyAsync(s => s.StudentId == newStudent.StudentId);
             if (exists) return BadRequest("סטודנט עם תעודת זהות זו כבר רשום במערכת");
+
             _context.Students.Add(newStudent);
             await _context.SaveChangesAsync();
             return Ok("הסטודנט נשמר בהצלחה");
@@ -37,25 +38,36 @@ namespace students.Controllers
             var student = await _context.Students.FirstOrDefaultAsync(s => s.StudentId == loginData.StudentId);
             if (student == null) return NotFound("סטודנט לא נמצא");
             if (student.StudentPassword != loginData.StudentPassword) return Unauthorized("סיסמה שגויה");
+            // מחזירים גם את ה-studentId וגם את השם כדי שהפלאטר יוכל להשתמש בהם למעבר בין דפים
             return Ok(new { studentId = student.StudentId, name = student.studentName, management = student.management });
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateStudent(string id, [FromBody] JsonElement updatedData)
         {
+            // חיפוש הסטודנט לפי תעודת הזהות (id) שמגיעה מה-URL
             var student = await _context.Students.FirstOrDefaultAsync(s => s.StudentId == id);
             if (student == null) return NotFound("הסטודנט לא נמצא");
+
             try
             {
+                // עדכון שם הסטודנט אם הוא קיים בבקשה
                 if (updatedData.TryGetProperty("studentName", out var nameProp))
+                {
                     student.studentName = nameProp.GetString();
+                }
 
+                // עדכון אימייל אם הוא קיים בבקשה
                 if (updatedData.TryGetProperty("studentEmail", out var emailProp))
+                {
                     student.studentEmail = emailProp.GetString();
+                }
 
+                // עדכון טלפון אם הוא קיים בבקשה
                 if (updatedData.TryGetProperty("studentPhone", out var phoneProp))
                 {
                     string phone = phoneProp.GetString();
+                    // שימוש בפונקציית העזר לבדיקת תקינות הטלפון
                     student.studentPhone = IsValid.IsValidPhoneNumber(phone) ? phone : student.studentPhone;
                 }
 
@@ -66,39 +78,6 @@ namespace students.Controllers
             {
                 return BadRequest("שגיאה בעדכון הנתונים: " + ex.Message);
             }
-        }
-
-        [HttpGet("login-google")]
-        public IActionResult LoginWithGoogle()
-        {
-            var props = new AuthenticationProperties
-            {
-                RedirectUri = "/api/Student/google-callback"
-            };
-            return Challenge(props, "Google");
-        }
-
-        [HttpGet("google-callback")]
-        public async Task<IActionResult> GoogleCallback()
-        {
-            var result = await HttpContext.AuthenticateAsync("Cookies");
-            if (result?.Principal == null) return Unauthorized("כניסה עם גוגל נכשלה");
-
-            var claims = result.Principal.Identities.First().Claims;
-            string email = claims.First(c => c.Type == System.Security.Claims.ClaimTypes.Email).Value;
-            string name  = claims.First(c => c.Type == System.Security.Claims.ClaimTypes.Name).Value;
-
-            // בדיקה אם המשתמש קיים לפי אימייל
-            var student = await _context.Students.FirstOrDefaultAsync(s => s.studentEmail == email);
-
-            if (student == null)
-            {
-                // משתמש חדש – מפנים למסך השלמת פרטים (ת.ז)
-                return Redirect($"http://localhost:5022/complete-profile?email={Uri.EscapeDataString(email)}&name={Uri.EscapeDataString(name)}");
-            }
-
-            // משתמש קיים – מחזירים את הפרטים כמו login רגיל
-            return Ok(new { studentId = student.StudentId, name = student.studentName, management = student.management });
         }
     }
 }

@@ -143,16 +143,6 @@
   },
   {
     "ContainingType": "students.Controllers.StudentController",
-    "Method": "GoogleCallback",
-    "RelativePath": "api/Student/google-callback",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "students.Controllers.StudentController",
     "Method": "Login",
     "RelativePath": "api/Student/login",
     "HttpMethod": "POST",
@@ -165,16 +155,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "students.Controllers.StudentController",
-    "Method": "LoginWithGoogle",
-    "RelativePath": "api/Student/login-google",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   }
 ]

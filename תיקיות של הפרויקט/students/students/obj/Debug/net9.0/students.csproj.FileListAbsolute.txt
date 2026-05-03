@@ -155,4 +155,3 @@ C:\Users\User\Documents\סמסטר אביב\סדנה פיתוח אפליקציו
 C:\Users\User\Documents\סמסטר אביב\סדנה פיתוח אפליקציות\פפ\תיקיות של הפרויקט\students\students\obj\Debug\net9.0\students.genruntimeconfig.cache
 C:\Users\User\Documents\סמסטר אביב\סדנה פיתוח אפליקציות\פפ\תיקיות של הפרויקט\students\students\obj\Debug\net9.0\ref\students.dll
 C:\Users\User\Documents\סמסטר אביב\סדנה פיתוח אפליקציות\פפ\תיקיות של הפרויקט\students\students\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-C:\Users\User\Documents\סמסטר אביב\סדנה פיתוח אפליקציות\פפ\תיקיות של הפרויקט\students\students\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.Google.dll

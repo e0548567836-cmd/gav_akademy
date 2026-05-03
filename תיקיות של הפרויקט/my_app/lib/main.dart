@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'pages/login_page.dart';
 import 'services/api_service.dart';
-import 'package:flutter/foundation.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  if (defaultTargetPlatform == TargetPlatform.android) {
-    WebViewPlatform.instance = AndroidWebViewPlatform();
-  }
   runApp(const StudentManagementApp());
 }
 
