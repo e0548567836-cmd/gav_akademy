@@ -5221,11 +5221,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\סמסטר אביב\\סדנה פיתוח אפליקציות\\פפ\\תיקיות של הפרויקט\\students\\students\\students.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\סמסטר אביב\\סדנה פיתוח אפליקציות\\גיט\\gav_akademy\\תיקיות של הפרויקט\\students\\students\\students.csproj",
       "projectName": "students",
-      "projectPath": "C:\\Users\\User\\Documents\\סמסטר אביב\\סדנה פיתוח אפליקציות\\פפ\\תיקיות של הפרויקט\\students\\students\\students.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\סמסטר אביב\\סדנה פיתוח אפליקציות\\גיט\\gav_akademy\\תיקיות של הפרויקט\\students\\students\\students.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\סמסטר אביב\\סדנה פיתוח אפליקציות\\פפ\\תיקיות של הפרויקט\\students\\students\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\סמסטר אביב\\סדנה פיתוח אפליקציות\\גיט\\gav_akademy\\תיקיות של הפרויקט\\students\\students\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

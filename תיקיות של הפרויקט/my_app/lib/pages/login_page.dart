@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:my_app/services/api_service.dart';
+import 'package:my_app/services/google_auth_service.dart';
 import 'package:my_app/constants.dart';
 import 'package:my_app/widgets/custom_text_field.dart';
 import 'register_screen.dart';
 import 'dashboard_screen.dart';
 import 'management_page.dart';
+import 'complete_profile_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -32,7 +34,6 @@ class _LoginPageState extends State<LoginPage> {
 
     try {
       final response = await ApiService.login(id, password);
-
       if (!mounted) return;
 
       if (response.statusCode == 200) {
@@ -59,6 +60,45 @@ class _LoginPageState extends State<LoginPage> {
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(const SnackBar(content: Text('שגיאת תקשורת עם השרת')));
+    }
+  }
+
+  Future<void> _handleGoogleLogin() async {
+    final data = await GoogleAuthService.signIn();
+    if (!mounted) return;
+
+    if (data == null) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('כניסה עם גוגל נכשלה')));
+      return;
+    }
+
+    final bool isNewUser = data['isNewUser'] ?? false;
+
+    if (isNewUser) {
+      // משתמש חדש – מעבר למסך השלמת ת.ז
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) =>
+              CompleteProfilePage(email: data['email'], name: data['name']),
+        ),
+      );
+    } else {
+      // משתמש קיים – כניסה רגילה
+      final String studentName = data['name'] ?? 'סטודנט';
+      final String studentId = data['studentId'].toString();
+      final bool isManagement = data['management'] ?? false;
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => isManagement
+              ? const ManagementPage()
+              : DashboardScreen(userName: studentName, userId: studentId),
+        ),
+      );
     }
   }
 
@@ -111,6 +151,45 @@ class _LoginPageState extends State<LoginPage> {
                   child: const Text(
                     'כניסה',
                     style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                OutlinedButton(
+                  onPressed: _handleGoogleLogin,
+                  style: OutlinedButton.styleFrom(
+                    minimumSize: const Size(double.infinity, 55),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    side: const BorderSide(color: Colors.grey),
+                    backgroundColor: Colors.white,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 24,
+                        height: 24,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Text(
+                          'G',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color(0xFF4285F4),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      const Text(
+                        'כניסה עם Google',
+                        style: TextStyle(color: Colors.black87, fontSize: 16),
+                      ),
+                    ],
                   ),
                 ),
                 TextButton(

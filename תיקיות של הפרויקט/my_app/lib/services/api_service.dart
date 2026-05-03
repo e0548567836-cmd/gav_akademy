@@ -3,9 +3,17 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String serverUrl = 'http://localhost:5022/api';
-  static const String studentUrl = '$serverUrl/Student';
-  static const String courseUrl = '$serverUrl/Course';
+  // kIsWeb בודק אם רץ בדפדפן או במובייל
+  static String get serverUrl {
+    if (kIsWeb) {
+      return 'http://localhost:5022/api';
+    } else {
+      return 'http://10.0.2.2:5022/api';
+    }
+  }
+
+  static String get studentUrl => '$serverUrl/Student';
+  static String get courseUrl => '$serverUrl/Course';
 
   static Future<http.Response> login(String id, String password) async {
     final url = Uri.parse('$studentUrl/login');
@@ -27,6 +35,30 @@ class ApiService {
     );
   }
 
+  static Future<http.Response> addStudent(
+    Map<String, dynamic> studentData,
+  ) async {
+    final url = Uri.parse('$studentUrl/AddStudent');
+    return await http.post(
+      url,
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode(studentData),
+    );
+  }
+
+  static Future<Map<String, dynamic>?> getStudent(String id) async {
+    try {
+      final url = Uri.parse('$studentUrl/$id');
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body);
+      }
+    } catch (e) {
+      debugPrint("Error fetching student: $e");
+    }
+    return null;
+  }
+
   static Future<http.Response> updateStudent(
     String id,
     Map<String, dynamic> data,
@@ -35,11 +67,7 @@ class ApiService {
     return await http.put(
       url,
       headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({
-        'studentName': data['studentName'],
-        'studentEmail': data['studentEmail'],
-        'studentPhone': data['studentPhone'],
-      }),
+      body: jsonEncode(data), // שולח רק מה שהתקבל, לא מוסיף שדות ריקים
     );
   }
 
