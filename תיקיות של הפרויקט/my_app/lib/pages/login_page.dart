@@ -6,7 +6,6 @@ import 'package:my_app/constants.dart';
 import 'package:my_app/widgets/custom_text_field.dart';
 import 'register_screen.dart';
 import 'dashboard_screen.dart';
-import 'management_page.dart';
 import 'complete_profile_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -26,9 +25,9 @@ class _LoginPageState extends State<LoginPage> {
 
     if (id.isEmpty || password.isEmpty) {
       if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('נא למלא ת"ז וסיסמה')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('נא למלא ת"ז וסיסמה')),
+      );
       return;
     }
 
@@ -40,26 +39,30 @@ class _LoginPageState extends State<LoginPage> {
         final data = jsonDecode(response.body);
         final String studentName = data['name'] ?? 'סטודנט';
         final String studentId = data['studentId'].toString();
+        // שליפת סטטוס המנהל מה-API
         final bool isManagement = data['management'] ?? false;
 
+        // התיקון: מעבר ל-Dashboard עם המפתח isManagement
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (_) => isManagement
-                ? const ManagementPage()
-                : DashboardScreen(userName: studentName, userId: studentId),
+            builder: (_) => DashboardScreen(
+              userName: studentName,
+              userId: studentId,
+              isManagement: isManagement, // המפתח עובר כאן
+            ),
           ),
         );
       } else {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text('שגיאה: ${response.body}')));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('שגיאה: ${response.body}')),
+        );
       }
     } catch (e) {
       if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('שגיאת תקשורת עם השרת')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('שגיאת תקשורת עם השרת')),
+      );
     }
   }
 
@@ -68,25 +71,25 @@ class _LoginPageState extends State<LoginPage> {
     if (!mounted) return;
 
     if (data == null) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('כניסה עם גוגל נכשלה')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('כניסה עם גוגל נכשלה')),
+      );
       return;
     }
 
     final bool isNewUser = data['isNewUser'] ?? false;
 
     if (isNewUser) {
-      // משתמש חדש – מעבר למסך השלמת ת.ז
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) =>
-              CompleteProfilePage(email: data['email'], name: data['name']),
+          builder: (_) => CompleteProfilePage(
+            email: data['email'],
+            name: data['name'],
+          ),
         ),
       );
     } else {
-      // משתמש קיים – כניסה רגילה
       final String studentName = data['name'] ?? 'סטודנט';
       final String studentId = data['studentId'].toString();
       final bool isManagement = data['management'] ?? false;
@@ -94,9 +97,11 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => isManagement
-              ? const ManagementPage()
-              : DashboardScreen(userName: studentName, userId: studentId),
+          builder: (_) => DashboardScreen(
+            userName: studentName,
+            userId: studentId,
+            isManagement: isManagement,
+          ),
         ),
       );
     }
@@ -113,11 +118,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.all(24),
             child: Column(
               children: [
-                const Icon(
-                  Icons.school_rounded,
-                  size: 80,
-                  color: kPrimaryColor,
-                ),
+                const Icon(Icons.school_rounded, size: 80, color: kPrimaryColor),
                 const Text(
                   'גב אקדמי',
                   style: TextStyle(
@@ -164,28 +165,19 @@ class _LoginPageState extends State<LoginPage> {
                     side: const BorderSide(color: Colors.grey),
                     backgroundColor: Colors.white,
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 24,
-                        height: 24,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Text(
-                          'G',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Color(0xFF4285F4),
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      Text(
+                        'G',
+                        style: TextStyle(
+                          color: Color(0xFF4285F4),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(width: 12),
-                      const Text(
+                      SizedBox(width: 12),
+                      Text(
                         'כניסה עם Google',
                         style: TextStyle(color: Colors.black87, fontSize: 16),
                       ),

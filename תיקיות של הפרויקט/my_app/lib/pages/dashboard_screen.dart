@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'edit_profile_page.dart';
+import 'admin_menu_page.dart'; // ייבוא דף תפריט המנהל
 import '../services/api_service.dart';
 import 'package:my_app/widgets/custom_text_field.dart';
 import '../widgets/page_padding.dart';
@@ -7,11 +8,13 @@ import '../widgets/page_padding.dart';
 class DashboardScreen extends StatefulWidget {
   final String userName;
   final String userId;
+  final bool isManagement; // המפתח שמזהה מנהל
 
   const DashboardScreen({
     super.key,
     required this.userName,
     required this.userId,
+    this.isManagement = false, // ברירת מחדל לסטודנט רגיל
   });
 
   @override
@@ -61,7 +64,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
           TextButton(
             onPressed: () async {
-              // ✅ שומרים את ה-navigator לפני ה-await
               final nav = Navigator.of(ctx);
               final success = await ApiService.unenrollFromCourse(
                 widget.userId,
@@ -112,8 +114,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   if (textValue.text.isEmpty) return allCatalog;
                   return allCatalog.where(
                     (c) => c['name'].toString().toLowerCase().contains(
-                      textValue.text.toLowerCase(),
-                    ),
+                          textValue.text.toLowerCase(),
+                        ),
                   );
                 },
                 onSelected: (selection) => selectedCourse = selection,
@@ -128,7 +130,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
           ElevatedButton(
             onPressed: () async {
-              // בדיקה אם נבחר קורס
               final courseInCatalog = allCatalog.any(
                 (c) =>
                     selectedCourse != null &&
@@ -145,7 +146,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 return;
               }
 
-              // בדיקה אם המשתמש כבר רשום לקורס
               bool alreadyEnrolled = myCourses.any(
                 (c) =>
                     selectedCourse != null &&
@@ -163,7 +163,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
               }
 
               if (selectedCourse != null) {
-                // ✅ שומרים את ה-navigator לפני ה-await
                 final nav = Navigator.of(ctx);
                 final success = await ApiService.enrollToCourse(
                   widget.userId,
@@ -208,48 +207,48 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 child: isLoading
                     ? const Center(child: CircularProgressIndicator())
                     : myCourses.isEmpty
-                    ? const Center(child: Text("עדיין לא נרשמת לאף קורס"))
-                    : ListView.builder(
-                        itemCount: myCourses.length,
-                        itemBuilder: (context, index) {
-                          final course = myCourses[index];
-                          final displayName =
-                              course['name'] ?? "קורס: ${course['courseId']}";
-                          return Card(
-                            margin: const EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 8,
-                            ),
-                            elevation: 2,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: ListTile(
-                              leading: const Icon(
-                                Icons.book_rounded,
-                                color: Color(0xFF1F3C88),
-                              ),
-                              title: Text(
-                                displayName,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
+                        ? const Center(child: Text("עדיין לא נרשמת לאף קורס"))
+                        : ListView.builder(
+                            itemCount: myCourses.length,
+                            itemBuilder: (context, index) {
+                              final course = myCourses[index];
+                              final displayName =
+                                  course['name'] ?? "קורס: ${course['courseId']}";
+                              return Card(
+                                margin: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 8,
                                 ),
-                              ),
-                              subtitle: Text("קוד: ${course['courseId']}"),
-                              trailing: IconButton(
-                                icon: const Icon(
-                                  Icons.delete_sweep_outlined,
-                                  color: Colors.redAccent,
+                                elevation: 2,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
-                                onPressed: () => _confirmDelete(
-                                  course['courseId'].toString(),
-                                  displayName,
+                                child: ListTile(
+                                  leading: const Icon(
+                                    Icons.book_rounded,
+                                    color: Color(0xFF1F3C88),
+                                  ),
+                                  title: Text(
+                                    displayName,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  subtitle: Text("קוד: ${course['courseId']}"),
+                                  trailing: IconButton(
+                                    icon: const Icon(
+                                      Icons.delete_sweep_outlined,
+                                      color: Colors.redAccent,
+                                    ),
+                                    onPressed: () => _confirmDelete(
+                                      course['courseId'].toString(),
+                                      displayName,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
+                              );
+                            },
+                          ),
               ),
             ],
           ),
@@ -281,27 +280,49 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ],
             ),
           ),
-          IconButton(
-            icon: const Icon(
-              Icons.edit_note_rounded,
-              color: Color(0xFF1F3C88),
-              size: 32,
-            ),
-            onPressed: () async {
-              final newName = await Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => EditProfilePage(
-                    userId: widget.userId,
-                    userName: currentUserName,
+          Row(
+            children: [
+              // 🛡️ כפתור מנהל - מוביל לתפריט הניהול הראשי
+              if (widget.isManagement)
+                IconButton(
+                  icon: const Icon(
+                    Icons.admin_panel_settings_rounded,
+                    color: Colors.redAccent,
+                    size: 32,
                   ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AdminMenuPage(),
+                      ),
+                    );
+                  },
                 ),
-              );
-              if (!mounted) return;
-              if (newName != null) {
-                setState(() => currentUserName = newName);
-              }
-            },
+              // כפתור עריכת פרופיל
+              IconButton(
+                icon: const Icon(
+                  Icons.edit_note_rounded,
+                  color: Color(0xFF1F3C88),
+                  size: 32,
+                ),
+                onPressed: () async {
+                  final newName = await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EditProfilePage(
+                        userId: widget.userId,
+                        userName: currentUserName,
+                      ),
+                    ),
+                  );
+                  if (!mounted) return;
+                  if (newName != null) {
+                    setState(() => currentUserName = newName);
+                  }
+                },
+              ),
+            ],
           ),
         ],
       ),

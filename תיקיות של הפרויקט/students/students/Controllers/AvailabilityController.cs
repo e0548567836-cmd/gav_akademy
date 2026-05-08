@@ -1,46 +1,48 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using students.Data;
-using students.Models; // ייבוא המודל StudentInCourse
+using students.Models;
 
 namespace students.Controllers
 {
-    [ApiController] // מגדיר את המחלקה כ-API
-    [Route("api/[controller]")] // הכתובת תהיה: api/availability
+    [ApiController]
+    [Route("api/[controller]")]
     public class AvailabilityController : ControllerBase
     {
-        private readonly ApplicationDbContext _context; // משתנה לגישה לדאטאבייס
+        private readonly ApplicationDbContext _context;
 
-        // בנאי (Constructor) שמקבל את החיבור ל-DB מהמערכת
         public AvailabilityController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        [HttpPost("update")] // מגדיר פונקציה שמקבלת בקשת POST לכתובת api/availability/update
-        public IActionResult UpdateStudent([FromBody] StudentInCourse data)
+        [HttpPost("update")]
+        public async Task<IActionResult> UpdateStudent([FromBody] StudentInCourse data)
         {
-            // בדיקה אם הגיע מידע בכלל
             if (data == null) return BadRequest("לא התקבל מידע");
 
-            // 1. חיפוש הסטודנט ב-SQL לפי ה-ID שהגיע מהפלאטר
-            var studentInDb = _context.StudentInCourses
-                .FirstOrDefault(s => s.StudentId == data.StudentId);
+            // שימוש ב-FirstOrDefaultAsync לביצועים טובים יותר
+            var studentInDb = await _context.StudentInCourses
+                .FirstOrDefaultAsync(s => s.StudentId == data.StudentId && s.CourseId == data.CourseId);
 
-            // אם הסטודנט לא קיים בטבלה
-            if (studentInDb == null) return NotFound("הסטודנט לא נמצא ב-SQL");
+            if (studentInDb == null)
+                return NotFound("הרשומה לא נמצאה בבסיס הנתונים");
 
-            // 2. עדכון השדות ב-DB מהמידע החדש שהגיע מהפרונט
+            // עדכון השדות מהמידע שהגיע מה-Flutter
             studentInDb.IsAvailable = data.IsAvailable;
-            studentInDb.CourseId = data.CourseId;
             studentInDb.Latitude = data.Latitude;
             studentInDb.Longitude = data.Longitude;
             studentInDb.IsInPerson = data.IsInPerson;
 
-            // 3. פקודה ששומרת את כל השינויים פיזית ב-SQL Server
-            _context.SaveChanges();
-
-            // החזרת תשובה חיובית לפלאטר
-            return Ok(new { message = "עודכן בבסיס הנתונים בהצלחה!" });
+            try
+            {
+                await _context.SaveChangesAsync();
+                return Ok(new { message = "הנתונים עודכנו ב-SQL בהצלחה!" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"שגיאה בשמירה: {ex.Message}");
+            }
         }
     }
 }

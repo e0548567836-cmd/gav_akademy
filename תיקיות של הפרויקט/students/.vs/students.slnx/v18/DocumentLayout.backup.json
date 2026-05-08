@@ -1,65 +1,70 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\src\\projects\\students\\",
+  "WorkspaceRootPath": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\src\\projects\\students\\students\\Migrations\\20260424070328_InitialStringSetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:students\\Migrations\\20260424070328_InitialStringSetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/StudentsDB/True/SqlTable/dbo.Courses.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\models\\studentincourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\models\\studentincourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\src\\projects\\students\\students\\Migrations\\20260424064355_FinalIntCourseFix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\src\\projects\\students\\students\\Migrations\\20260424064355_FinalIntCourseFix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:students\\Migrations\\20260424064355_FinalIntCourseFix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\src\\projects\\students\\students\\Migrations\\20260424064316_FixIntCourses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:students\\Migrations\\20260424064316_FixIntCourses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\helpers\\isvalid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\helpers\\isvalid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\src\\projects\\students\\students\\Migrations\\20260424064316_FixIntCourses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/StudentsDB/True/SqlTable/dbo.Students.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\models\\studentincourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\models\\studentincourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\students.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\students.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\src\\projects\\students\\students\\controllers\\availabilitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\controllers\\availabilitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\controllers\\availabilitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\migrations\\20260424070328_initialstringsetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\migrations\\20260424070328_initialstringsetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\helpers\\isvalid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\helpers\\isvalid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|c:\\users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\students.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{EB04F1BE-2BA1-F24E-775F-1C69820EDD47}|students\\students.csproj|solutionrelative:students\\students.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
   "DocumentGroupContainers": [
@@ -69,199 +74,205 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20260424070328_InitialStringSetup.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Migrations\\20260424070328_InitialStringSetup.cs",
-              "RelativeDocumentMoniker": "students\\Migrations\\20260424070328_InitialStringSetup.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Migrations\\20260424070328_InitialStringSetup.cs",
-              "RelativeToolTip": "students\\Migrations\\20260424070328_InitialStringSetup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "students\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "students\\Controllers\\StudentController.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAwwJQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T07:03:29.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-21T12:49:00.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20260424064355_FinalIntCourseFix.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Migrations\\20260424064355_FinalIntCourseFix.cs",
-              "RelativeDocumentMoniker": "students\\Migrations\\20260424064355_FinalIntCourseFix.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Migrations\\20260424064355_FinalIntCourseFix.cs",
-              "RelativeToolTip": "students\\Migrations\\20260424064355_FinalIntCourseFix.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T06:43:55.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "20260424064316_FixIntCourses.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Migrations\\20260424064316_FixIntCourses.cs",
-              "RelativeDocumentMoniker": "students\\Migrations\\20260424064316_FixIntCourses.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Migrations\\20260424064316_FixIntCourses.cs",
-              "RelativeToolTip": "students\\Migrations\\20260424064316_FixIntCourses.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T06:43:17.815Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CourseController.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Controllers\\CourseController.cs",
-              "RelativeDocumentMoniker": "students\\Controllers\\CourseController.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Controllers\\CourseController.cs",
-              "RelativeToolTip": "students\\Controllers\\CourseController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAowF0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T15:50:11.295Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Course.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Models\\Course.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Models\\Course.cs",
               "RelativeDocumentMoniker": "students\\Models\\Course.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Models\\Course.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Models\\Course.cs",
               "RelativeToolTip": "students\\Models\\Course.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T15:48:00.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "students\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "students\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAYwBkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-19T14:42:35.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StudentInCourse.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Models\\StudentInCourse.cs",
-              "RelativeDocumentMoniker": "students\\Models\\StudentInCourse.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Models\\StudentInCourse.cs",
-              "RelativeToolTip": "students\\Models\\StudentInCourse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T10:27:37.952Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-22T15:48:00.127Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "IsValid.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Helpers\\IsValid.cs",
-              "RelativeDocumentMoniker": "students\\Helpers\\IsValid.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Helpers\\IsValid.cs",
-              "RelativeToolTip": "students\\Helpers\\IsValid.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Title": "StudentInCourse.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Models\\StudentInCourse.cs",
+              "RelativeDocumentMoniker": "students\\Models\\StudentInCourse.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Models\\StudentInCourse.cs",
+              "RelativeToolTip": "students\\Models\\StudentInCourse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T12:47:55.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-22T10:27:37.952Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "students\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "students\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T14:42:35.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Program.cs",
               "RelativeDocumentMoniker": "students\\Program.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Program.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Program.cs",
               "RelativeToolTip": "students\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAwwDQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-21T13:12:13.857Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "students\\Controllers\\StudentController.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "students\\Controllers\\StudentController.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAuwFMAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "students\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "students\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAwwIAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T12:49:00.124Z",
+              "WhenOpened": "2026-05-04T19:25:44.53Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "dbo.Students [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/StudentsDB/True/SqlTable/dbo.Students.sql",
-              "ToolTip": "dbo.Students [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-04-22T11:11:25.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\appsettings.json",
-              "RelativeDocumentMoniker": "students\\appsettings.json",
-              "ToolTip": "C:\\src\\projects\\students\\students\\appsettings.json",
-              "RelativeToolTip": "students\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-21T13:43:10.561Z",
-              "EditorCaption": ""
+              "DocumentIndex": 6,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "students\\Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "students\\Controllers\\CourseController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwF0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T15:50:11.295Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Student.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Models\\Student.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Models\\Student.cs",
               "RelativeDocumentMoniker": "students\\Models\\Student.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Models\\Student.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Models\\Student.cs",
               "RelativeToolTip": "students\\Models\\Student.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA0wCAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T12:59:02.969Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-21T12:59:02.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AvailabilityController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Controllers\\AvailabilityController.cs",
+              "RelativeDocumentMoniker": "students\\Controllers\\AvailabilityController.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Controllers\\AvailabilityController.cs",
+              "RelativeToolTip": "students\\Controllers\\AvailabilityController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T12:49:16.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dbo.Courses.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/StudentsDB/True/SqlTable/dbo.Courses.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/StudentsDB/True/SqlTable/dbo.Courses.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-05-05T08:20:18.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20260424064355_FinalIntCourseFix.cs",
+              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Migrations\\20260424064355_FinalIntCourseFix.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\src\\projects\\students\\students\\Migrations\\20260424064355_FinalIntCourseFix.cs",
+              "ToolTip": "C:\\src\\projects\\students\\students\\Migrations\\20260424064355_FinalIntCourseFix.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\src\\projects\\students\\students\\Migrations\\20260424064355_FinalIntCourseFix.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T06:43:55.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20260424064316_FixIntCourses.cs",
+              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Migrations\\20260424064316_FixIntCourses.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\src\\projects\\students\\students\\Migrations\\20260424064316_FixIntCourses.cs",
+              "ToolTip": "C:\\src\\projects\\students\\students\\Migrations\\20260424064316_FixIntCourses.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\src\\projects\\students\\students\\Migrations\\20260424064316_FixIntCourses.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T06:43:17.815Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "students.http",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\students.http",
-              "RelativeDocumentMoniker": "students\\students.http",
-              "ToolTip": "C:\\src\\projects\\students\\students\\students.http",
-              "RelativeToolTip": "students\\students.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-04-22T10:00:20.045Z",
-              "EditorCaption": ""
+              "Title": "20260424070328_InitialStringSetup.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Migrations\\20260424070328_InitialStringSetup.cs",
+              "RelativeDocumentMoniker": "students\\Migrations\\20260424070328_InitialStringSetup.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Migrations\\20260424070328_InitialStringSetup.cs",
+              "RelativeToolTip": "students\\Migrations\\20260424070328_InitialStringSetup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T07:03:29.322Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "AvailabilityController.cs",
-              "DocumentMoniker": "C:\\src\\projects\\students\\students\\Controllers\\AvailabilityController.cs",
-              "RelativeDocumentMoniker": "students\\Controllers\\AvailabilityController.cs",
-              "ToolTip": "C:\\src\\projects\\students\\students\\Controllers\\AvailabilityController.cs",
-              "RelativeToolTip": "students\\Controllers\\AvailabilityController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
+              "Title": "IsValid.cs",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Helpers\\IsValid.cs",
+              "RelativeDocumentMoniker": "students\\Helpers\\IsValid.cs",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\Helpers\\IsValid.cs",
+              "RelativeToolTip": "students\\Helpers\\IsValid.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T12:49:16.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-21T12:47:55.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dbo.Students.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/StudentsDB/True/SqlTable/dbo.Students.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/StudentsDB/True/SqlTable/dbo.Students.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-04-22T11:11:25.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\appsettings.json",
+              "RelativeDocumentMoniker": "students\\appsettings.json",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\appsettings.json",
+              "RelativeToolTip": "students\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-21T13:43:10.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "students.http",
+              "DocumentMoniker": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\students.http",
+              "RelativeDocumentMoniker": "students\\students.http",
+              "ToolTip": "C:\\Users\\\u05D8\u05DC\u05D9 \u05D2\u05E4\u05E0\u05D9\\Projects\\gav_akademy\\\u05EA\u05D9\u05E7\u05D9\u05D5\u05EA \u05E9\u05DC \u05D4\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\students\\students\\students.http",
+              "RelativeToolTip": "students\\students.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-04-22T10:00:20.045Z"
             }
           ]
         }

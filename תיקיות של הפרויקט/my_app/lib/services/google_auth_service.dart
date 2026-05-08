@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
+import 'api_service.dart'; // ייבוא של ה-ApiService
 
 class GoogleAuthService {
   static final GoogleSignIn _googleSignIn = GoogleSignIn(
@@ -13,10 +14,9 @@ class GoogleAuthService {
       final account = await _googleSignIn.signIn();
       if (account == null) return null;
 
+      // שימוש ב-serverUrl שהגדרנו ב-ApiService במקום לכתוב ידנית 5022
       final response = await http.post(
-        Uri.parse(
-          '${kIsWeb ? "http://localhost:5022" : "http://10.0.2.2:5022"}/api/Student/google-signin',
-        ),
+        Uri.parse('${ApiService.serverUrl}/Student/google-signin'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'email': account.email,
@@ -29,6 +29,7 @@ class GoogleAuthService {
       }
       return null;
     } catch (e) {
+      debugPrint("Google Sign-In Error: $e");
       return null;
     }
   }
