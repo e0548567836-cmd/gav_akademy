@@ -1,12 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.github",
     "\\students",
     "\\students\\Controllers",
     "\\students\\Data",
     "\\students\\Models",
     "\\students\\Properties"
   ],
-  "SelectedNode": "\\students.slnx",
+  "SelectedNode": "\\students\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

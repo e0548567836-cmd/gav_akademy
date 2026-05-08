@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/login_page.dart';
 import 'services/api_service.dart';
-
+import 'pages/admin_menu_page.dart';
 void main() {
   runApp(const StudentManagementApp());
 }
@@ -33,6 +33,7 @@ class StudentManagementApp extends StatelessWidget {
         return Directionality(textDirection: TextDirection.rtl, child: child!);
       },
       home: const LoginPage(),
+      //home: const AdminMenuPage(),
     );
   }
 }

@@ -1,22 +1,23 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations; // לצורך הגדרות SQL
-
+using System.ComponentModel.DataAnnotations;
 
 namespace students.Models
 {
     public class Student
     {
-        public required string StudentId { get; set; }//student id
+        [Key] // מומלץ להוסיף כדי להגדיר את זה כמפתח ראשי ב-SQL
+        public required string StudentId { get; set; }
 
-        public string StudentPassword { get; set; } = string.Empty;//student passward
+        public string StudentPassword { get; set; } = string.Empty;
 
-        public string studentName { get; set; } = string.Empty;//student name
+        public string studentName { get; set; } = string.Empty;
 
-        public string studentEmail { get; set; } = string.Empty;//student email
+        public string studentEmail { get; set; } = string.Empty;
 
-        public string studentPhone { get; set; } = string.Empty;//student phon
+        public string studentPhone { get; set; } = string.Empty;
 
-        public bool management {  get; set; } = false; // is management
+        // השדה החשוב שקיים בפרויקט המלא וחסר אצלך
+        public bool management { get; set; } = false;
 
         public Student() { }
 
@@ -27,9 +28,7 @@ namespace students.Models
             this.studentName = studentName;
             this.studentEmail = studentEmail;
             this.studentPhone = studentPhone;
-            this.management = false;
+            this.management = false; // כברירת מחדל, סטודנט חדש הוא לא מנהל
         }
-
-
     }
 }

@@ -26,28 +26,29 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
     final id = idController.text.trim();
 
     if (id.isEmpty) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('נא להזין תעודת זהות')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('נא להזין תעודת זהות')),
+      );
       return;
     }
 
     setState(() => isLoading = true);
 
     try {
-      // יצירת משתמש חדש עם הת.ז שהוזנה
-      final response = await ApiService.addStudent({
-        'studentId': id,
-        'studentName': widget.name,
-        'studentEmail': widget.email,
-        'studentPassword': 'GOOGLE_USER',
-        'studentPhone': '',
-        'management': false,
+      // שליחת הנתונים לשרת - ודאי ששמות השדות תואמים למודל ב-C#
+      final response = await ApiService.register({
+        'StudentId': id, // שונה ל-PascalCase כדי להתאים ל-ASP.NET
+        'StudentName': widget.name,
+        'StudentEmail': widget.email,
+        'StudentPassword': 'GOOGLE_USER',
+        'StudentPhone': '',
+        'Management': false,
       });
 
       if (!mounted) return;
       setState(() => isLoading = false);
 
+      // בדיקה אם הסטטוס הוא 200 (הצלחה)
       if (response.statusCode == 200) {
         Navigator.pushReplacement(
           context,
@@ -56,16 +57,16 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
           ),
         );
       } else {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text('שגיאה: ${response.body}')));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('שגיאה מהשרת: ${response.statusCode}')),
+        );
       }
     } catch (e) {
       if (!mounted) return;
       setState(() => isLoading = false);
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('שגיאת תקשורת עם השרת')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('שגיאת תקשורת עם השרת')),
+      );
     }
   }
 
@@ -107,7 +108,7 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
                 CustomTextField(
                   controller: idController,
                   hint: 'תעודת זהות',
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.text, // שינוי לטקסט כי עברנו ל-String
                 ),
                 const SizedBox(height: 25),
                 isLoading
