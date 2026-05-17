@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
-import '../constants.dart';
 
 class PromoteAdminPage extends StatefulWidget {
   const PromoteAdminPage({super.key});
@@ -11,7 +10,8 @@ class PromoteAdminPage extends StatefulWidget {
 
 class _PromoteAdminPageState extends State<PromoteAdminPage> {
   List<dynamic> students = [];
-  Map<String, dynamic>? selectedStudent; // נשמור את כל האובייקט של הסטודנט שנבחר
+  Map<String, dynamic>?
+  selectedStudent; // נשמור את כל האובייקט של הסטודנט שנבחר
   bool isLoading = true;
 
   @override
@@ -48,22 +48,28 @@ class _PromoteAdminPageState extends State<PromoteAdminPage> {
                   children: [
                     const Text(
                       "חפש שם סטודנט לשדרוג:",
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 16),
-                    
+
                     // ווידג'ט החיפוש החכם
                     Autocomplete<Map<String, dynamic>>(
-                      displayStringForOption: (option) => 
+                      displayStringForOption: (option) =>
                           "${option['studentName']} (${option['studentId']})",
                       optionsBuilder: (TextEditingValue textValue) {
                         if (textValue.text.isEmpty) {
                           return students.cast<Map<String, dynamic>>();
                         }
-                        return students.where((s) => s['studentName']
-                            .toString()
-                            .toLowerCase()
-                            .contains(textValue.text.toLowerCase()))
+                        return students
+                            .where(
+                              (s) => s['studentName']
+                                  .toString()
+                                  .toLowerCase()
+                                  .contains(textValue.text.toLowerCase()),
+                            )
                             .cast<Map<String, dynamic>>();
                       },
                       onSelected: (selection) {
@@ -72,32 +78,36 @@ class _PromoteAdminPageState extends State<PromoteAdminPage> {
                         });
                       },
                       // עיצוב שדה הטקסט של החיפוש
-                      fieldViewBuilder: (context, controller, focusNode, onFieldSubmitted) {
-                        return TextField(
-                          controller: controller,
-                          focusNode: focusNode,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: "הקלד שם סטודנט...",
-                            prefixIcon: Icon(Icons.search),
-                          ),
-                        );
-                      },
+                      fieldViewBuilder:
+                          (context, controller, focusNode, onFieldSubmitted) {
+                            return TextField(
+                              controller: controller,
+                              focusNode: focusNode,
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: "הקלד שם סטודנט...",
+                                prefixIcon: Icon(Icons.search),
+                              ),
+                            );
+                          },
                     ),
-                    
+
                     const Spacer(),
-                    
+
                     if (selectedStudent != null)
                       Padding(
                         padding: const EdgeInsets.only(bottom: 20),
                         child: Center(
                           child: Text(
                             "נבחר: ${selectedStudent!['studentName']}",
-                            style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue,
+                            ),
                           ),
                         ),
                       ),
-                      
+
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.redAccent,
@@ -110,11 +120,15 @@ class _PromoteAdminPageState extends State<PromoteAdminPage> {
                           ? null
                           : () async {
                               final success = await ApiService.makeStudentAdmin(
-                                selectedStudent!['studentId'].toString()
+                                selectedStudent!['studentId'].toString(),
                               );
                               if (success && mounted) {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(content: Text("הסטודנט שודרג למנהל בהצלחה!")),
+                                  const SnackBar(
+                                    content: Text(
+                                      "הסטודנט שודרג למנהל בהצלחה!",
+                                    ),
+                                  ),
                                 );
                                 Navigator.pop(context);
                               }

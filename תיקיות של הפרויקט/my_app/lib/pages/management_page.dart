@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 import '../constants.dart';
+import 'add_course_page.dart';
 
 class ManagementPage extends StatefulWidget {
   const ManagementPage({super.key});
@@ -104,9 +105,7 @@ class _ManagementPageState extends State<ManagementPage> {
                   ),
         // כפתור להוספת קורס חדש ל-DB
         floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {
-            // כאן תוכלי לנווט לדף add_course_page.dart שיש לך בפרויקט
-          },
+          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AddCoursePage())),
           label: const Text('הוספת קורס לקטלוג'),
           icon: const Icon(Icons.add_chart),
           backgroundColor: kPrimaryColor,

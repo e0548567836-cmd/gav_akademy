@@ -4,6 +4,7 @@ import 'admin_menu_page.dart'; // ייבוא דף תפריט המנהל
 import '../services/api_service.dart';
 import 'package:my_app/widgets/custom_text_field.dart';
 import '../widgets/page_padding.dart';
+import 'course_page.dart';
 
 class DashboardScreen extends StatefulWidget {
   final String userName;
@@ -224,6 +225,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: ListTile(
+                                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CoursePage(courseName: displayName, courseId: course['courseId'].toString(), currentStudentId: widget.userId))),
                                   leading: const Icon(
                                     Icons.book_rounded,
                                     color: Color(0xFF1F3C88),

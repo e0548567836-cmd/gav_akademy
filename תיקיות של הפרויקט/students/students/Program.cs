@@ -1,3 +1,4 @@
+using students.Services;
 using Microsoft.EntityFrameworkCore;
 using students.Data;
 
@@ -5,13 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // --- רישום שירותים (Services) ---
 builder.Services.AddControllers();
+builder.Services.AddScoped<CloudinaryService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // הגדרת CORS עבור ה-Flutter
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowAll", policy => {
-        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
     });
 });
 
@@ -33,21 +37,23 @@ builder.Services.AddAuthentication(options => {
 
 var app = builder.Build();
 
-// --- הגדרת ה-Middleware (סדר הפעולות) ---
+// --- הגדרת ה-Middleware (סדר הפעולות קריטי!) ---
 
-// הפעלת Swagger בכל מצב (גם ב-Production) כדי לוודא שזה עובד לך
+// 1. חובה לשים את ה-CORS בשלב הכי מוקדם כדי למנוע חסימות דפדפן
+app.UseCors("AllowAll");
+
+// 2. הפעלת Swagger
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
-    // הגדרה זו גורמת ל-Swagger להיפתח ישר בכתובת הראשית (למשל http://localhost:5000)
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.RoutePrefix = string.Empty;
+    options.RoutePrefix = string.Empty; // פותח את Swagger ישירות בכתובת הראשית
 });
 
-app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
 
+// 4. מיפוי נקודות הקצה
 app.MapControllers();
 
 app.Run();

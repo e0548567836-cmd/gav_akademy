@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 import '../constants.dart';
 import '../widgets/custom_text_field.dart';
-import '../widgets/page_padding.dart';
 
 class AddCoursePage extends StatefulWidget {
   const AddCoursePage({super.key});
@@ -15,7 +14,8 @@ class _AddCoursePageState extends State<AddCoursePage> {
   // הגדרת הקונטרולרים לניהול הקלט
   final TextEditingController _idController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _descriptionController = TextEditingController(); // הוספתי קונטרולר לתיאור
+  final TextEditingController _descriptionController =
+      TextEditingController(); // הוספתי קונטרולר לתיאור
   bool isLoading = false;
 
   @override
@@ -42,17 +42,18 @@ class _AddCoursePageState extends State<AddCoursePage> {
           child: Column(
             children: [
               const SizedBox(height: 10),
-              
+
               // שדה מספר קורס
               CustomTextField(
                 controller: _idController,
                 hint: 'לדוגמה: CS101',
                 label: 'מספר קורס (ID)',
-                keyboardType: TextInputType.text, // שונה לטקסט כי זה String בשרת
+                keyboardType:
+                    TextInputType.text, // שונה לטקסט כי זה String בשרת
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // שדה שם הקורס
               CustomTextField(
                 controller: _nameController,
@@ -68,7 +69,7 @@ class _AddCoursePageState extends State<AddCoursePage> {
                 hint: 'פירוט קצר על הקורס',
                 label: 'תיאור הקורס',
               ),
-              
+
               const SizedBox(height: 30),
 
               if (isLoading)
@@ -85,9 +86,12 @@ class _AddCoursePageState extends State<AddCoursePage> {
                   ),
                   onPressed: () async {
                     // בדיקת תקינות קלט בסיסית
-                    if (_idController.text.isEmpty || _nameController.text.isEmpty) {
+                    if (_idController.text.isEmpty ||
+                        _nameController.text.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('נא למלא לפחות קוד ושם קורס')),
+                        const SnackBar(
+                          content: Text('נא למלא לפחות קוד ושם קורס'),
+                        ),
                       );
                       return;
                     }
@@ -97,27 +101,34 @@ class _AddCoursePageState extends State<AddCoursePage> {
                     try {
                       // קריאה לשרת להוספת הקורס עם 3 הפרמטרים הנדרשים
                       final response = await ApiService.addCourse(
-                        _idController.text, 
+                        _idController.text,
                         _nameController.text,
                         _descriptionController.text,
                       );
 
                       if (!mounted) return;
 
-                      if (response.statusCode == 200 || response.statusCode == 201) {
+                      if (response.statusCode == 200 ||
+                          response.statusCode == 201) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('הקורס נוסף בהצלחה למערכת')),
+                          const SnackBar(
+                            content: Text('הקורס נוסף בהצלחה למערכת'),
+                          ),
                         );
                         Navigator.pop(context); // חזרה לדף הקודם
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('שגיאה מהשרת: ${response.body}')),
+                          SnackBar(
+                            content: Text('שגיאה מהשרת: ${response.body}'),
+                          ),
                         );
                       }
                     } catch (e) {
                       if (mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('שגיאת תקשורת: ודאי שהשרת פועל')),
+                          const SnackBar(
+                            content: Text('שגיאת תקשורת: ודאי שהשרת פועל'),
+                          ),
                         );
                       }
                     } finally {

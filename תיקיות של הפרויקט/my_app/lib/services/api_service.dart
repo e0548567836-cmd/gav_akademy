@@ -3,13 +3,13 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  // כתובת השרת המעודכנת (Port 5262 לפי הטרמינל שלך)
+  // כתובת השרת המעודכנת (Port 5022 - Backend של ריקי)
   static String get serverUrl {
     if (kIsWeb) {
-      return 'http://localhost:5262/api';
+      return 'http://localhost:5022/api';
     } else {
       // כתובת עבור אמולטור אנדרואיד למחשב המקומי
-      return 'http://10.0.2.2:5262/api';
+      return 'http://10.0.2.2:5022/api';
     }
   }
 
@@ -158,6 +158,32 @@ class ApiService {
       return response.statusCode == 200;
     } catch (e) {
       debugPrint("Error promoting student to admin: $e");
+      return false;
+    }
+  }
+
+  // -------------------------
+  // פונקציות חומרים (Materials)
+  // -------------------------
+
+  static Future<List<dynamic>> getMaterials(String courseId) async {
+    try {
+      final url = Uri.parse('$serverUrl/Materials/GetMaterialsByCourse/$courseId');
+      final response = await http.get(url);
+      if (response.statusCode == 200) return jsonDecode(response.body);
+    } catch (e) {
+      debugPrint("Error fetching materials: $e");
+    }
+    return [];
+  }
+
+  static Future<bool> deleteMaterial(String id) async {
+    try {
+      final url = Uri.parse('$serverUrl/Materials/DeleteMaterial/$id');
+      final response = await http.delete(url);
+      return response.statusCode == 200;
+    } catch (e) {
+      debugPrint("Error deleting material: $e");
       return false;
     }
   }
