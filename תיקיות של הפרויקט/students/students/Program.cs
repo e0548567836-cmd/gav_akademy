@@ -4,13 +4,13 @@ using students.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --- רישום שירותים (Services) ---
+// --- Register Services ---
 builder.Services.AddControllers();
 builder.Services.AddScoped<CloudinaryService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// הגדרת CORS עבור ה-Flutter
+// CORS policy for Flutter
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowAll", policy => {
         policy.AllowAnyOrigin()
@@ -19,11 +19,11 @@ builder.Services.AddCors(options => {
     });
 });
 
-// חיבור למסד הנתונים (SQL Server)
+// Database connection (SQLite)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// הגדרת אימות מול גוגל
+// Google authentication
 builder.Services.AddAuthentication(options => {
     options.DefaultScheme = "Cookies";
     options.DefaultChallengeScheme = "Google";
@@ -37,23 +37,21 @@ builder.Services.AddAuthentication(options => {
 
 var app = builder.Build();
 
-// --- הגדרת ה-Middleware (סדר הפעולות קריטי!) ---
-
-// 1. חובה לשים את ה-CORS בשלב הכי מוקדם כדי למנוע חסימות דפדפן
+// 1. CORS must be first to prevent browser blocking
 app.UseCors("AllowAll");
 
-// 2. הפעלת Swagger
+// 2. Enable Swagger
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.RoutePrefix = string.Empty; // פותח את Swagger ישירות בכתובת הראשית
+    options.RoutePrefix = string.Empty; // Opens Swagger at root URL
 });
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-// 4. מיפוי נקודות הקצה
+// 3. Map endpoints
 app.MapControllers();
 
 app.Run();
