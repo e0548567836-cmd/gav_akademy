@@ -19,6 +19,14 @@ namespace students.Models
 
         public bool IsInPerson { get; set; }
 
+        public string? Address { get; set; }
+
+        public double? MaxDistanceKm { get; set; }
+
+        public bool WantsHelp { get; set; } = false;
+
+        public bool WantsToTeach { get; set; } = false;
+
         // בנאי ללא פרמטרים הנדרש על ידי Entity Framework
         public StudentInCourse() { }
 
@@ -27,10 +35,19 @@ namespace students.Models
         {
             StudentId = studentId;
             CourseId = courseId;
+
             IsAvailable = false;
+
             Latitude = null;
             Longitude = null;
+
             IsInPerson = false;
+
+            Address = null;
+            MaxDistanceKm = null;
+
+            WantsHelp = false;
+            WantsToTeach = false;
         }
     }
 }

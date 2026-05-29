@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'dart:typed_data';
 import 'package:url_launcher/url_launcher.dart';
 import '../services/api_service.dart';
+import 'is_avialable.dart';
 
 class CoursePage extends StatefulWidget {
   final String courseName;
@@ -64,7 +65,18 @@ class _CoursePageState extends State<CoursePage> {
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Center(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CourseAvailabilityPage(
+                    userId: widget.currentStudentId,
+                    courseId: widget.courseId,
+                    courseName: widget.courseName,
+                    ),
+                    ),
+                  );
+                },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFC6A869),
                     foregroundColor: Colors.white,

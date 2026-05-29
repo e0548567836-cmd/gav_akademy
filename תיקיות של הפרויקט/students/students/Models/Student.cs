@@ -16,6 +16,10 @@ namespace students.Models
 
         public string studentPhone { get; set; } = string.Empty;
 
+        public double? Grade { get; set; }
+        
+        public string? Address { get; set; }
+
         // השדה החשוב שקיים בפרויקט המלא וחסר אצלך
         public bool management { get; set; } = false;
 
