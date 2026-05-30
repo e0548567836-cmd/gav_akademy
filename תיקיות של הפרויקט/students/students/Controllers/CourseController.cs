@@ -90,5 +90,37 @@ namespace students.Controllers
 
             return Ok(new { message = "הקורס הוסר בהצלחה" });
         }
+
+        // 6.שינוי סטטוס זמינות
+        public class UpdateAvailabilityRequest
+        {
+            public string StudentId { get; set; }
+            public string CourseId { get; set; }
+            public bool IsAvailable { get; set; }
+        }
+        [HttpPut("UpdateAvailability")]
+        public async Task<IActionResult> UpdateAvailability([FromBody] UpdateAvailabilityRequest request)
+        {
+            if (request == null || string.IsNullOrEmpty(request.StudentId) || string.IsNullOrEmpty(request.CourseId))
+            {
+                return BadRequest(new { message = "Missing data" });
+            }
+
+            var studentCourse = await _context.StudentInCourses
+                .FirstOrDefaultAsync(sc =>
+                    sc.StudentId == request.StudentId &&
+                    sc.CourseId == request.CourseId);
+
+            if (studentCourse == null)
+            {
+                return NotFound(new { message = "Student is not enrolled in this course" });
+            }
+
+            studentCourse.IsAvailable = request.IsAvailable;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Availability updated successfully" });
+        }
     }
 }
