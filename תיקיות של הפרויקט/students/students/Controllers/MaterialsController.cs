@@ -4,10 +4,22 @@ using students.Data;
 using students.Models;
 using students.Services;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore; // מאפשר שימוש ב-ToListAsync
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace students.Controllers
 {
+    // מחלקת העזר לקבלת הטופס (מגיעה בדרך כלל בסוף הקובץ או בקובץ נפרד)
+    // שינינו כאן את CourseId מ-int ל-string כדי להתאים לקורסים!
+    public class UploadMaterialRequest
+    {
+        public IFormFile File { get; set; }
+        public string CourseId { get; set; } // <-- תוקן מ-int ל-string
+        public int StudentId { get; set; }
+    }
+
     [ApiController]
     [Route("api/[controller]")]
     public class MaterialsController : ControllerBase
@@ -22,10 +34,9 @@ namespace students.Controllers
         }
 
         [HttpPost("UploadNewMaterial")]
-        [Consumes("multipart/form-data")] // מודיע ל-Swagger שמדובר בהעלאת קובץ
+        [Consumes("multipart/form-data")]
         public async Task<IActionResult> PostMaterial([FromForm] UploadMaterialRequest request)
         {
-            // בדיקה מקדימה שהבקשה והקובץ אינם null
             if (request == null || request.File == null || request.File.Length == 0)
             {
                 Console.WriteLine("❌ שגיאה: לא התקבל קובץ או שהבקשה ריקה");
@@ -33,7 +44,7 @@ namespace students.Controllers
             }
 
             var file = request.File;
-            var courseId = request.CourseId;
+            var courseId = request.CourseId; // כעת זה string באופן אוטומטי מה-Request
             var studentId = request.StudentId;
 
             Console.WriteLine("=== התחלת UploadNewMaterial ===");
@@ -42,14 +53,8 @@ namespace students.Controllers
 
             try
             {
-                // 1. העלאה ל-Cloudinary
                 Console.WriteLine("⏳ שולח ל-Cloudinary...");
                 var uploadResult = await _cloudinaryService.UploadImageAsync(file);
-
-                Console.WriteLine($"Cloudinary StatusCode: {uploadResult.StatusCode}");
-                Console.WriteLine($"Cloudinary PublicId: {uploadResult.PublicId}");
-                Console.WriteLine($"Cloudinary SecureUrl: {uploadResult.SecureUrl}");
-                Console.WriteLine($"Cloudinary Error: {(uploadResult.Error != null ? uploadResult.Error.Message : "אין שגיאה")}");
 
                 if (uploadResult.Error != null)
                 {
@@ -63,7 +68,6 @@ namespace students.Controllers
                     return StatusCode(500, "הקובץ לא עלה, SecureUrl ריק");
                 }
 
-                // 2. יצירת האובייקט לשמירה
                 Console.WriteLine("⏳ שומר בבסיס הנתונים...");
                 var newMaterial = new Material
                 {
@@ -71,11 +75,10 @@ namespace students.Controllers
                     CloudFileName = uploadResult.PublicId,
                     UserFileName = file.FileName,
                     UploadDate = DateTime.Now,
-                    RelatedCourseId = courseId,
+                    RelatedCourseId = courseId, // ההשמה תעבוד מעולה כי שניהם string
                     UploaderStudentId = studentId
                 };
 
-                // 3. שמירה בבסיס הנתונים
                 _context.Materials.Add(newMaterial);
                 await _context.SaveChangesAsync();
 
@@ -93,15 +96,15 @@ namespace students.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine($"❌ Exception: {ex.Message}");
-                Console.WriteLine($"❌ StackTrace: {ex.StackTrace}");
                 return StatusCode(500, "שגיאה פנימית: " + ex.Message);
             }
         }
 
+        // 1. שינוי קריטי: הפרמטר courseId שונה מ-int ל-string כדי לאפשר חיפוש תואם
         [HttpGet("GetMaterialsByCourse/{courseId}")]
-        public async Task<IActionResult> GetMaterials(int courseId)
+        public async Task<IActionResult> GetMaterials(string courseId) // <-- תוקן מ-int ל-string
         {
-            // שינוי ל-ToListAsync לביצועים אסינכרוניים טובים יותר
+            // החיפוש (Where) יעבוד כעת בצורה מושלמת בין string ל-string
             var materials = await _context.Materials
                 .Where(m => m.RelatedCourseId == courseId)
                 .OrderByDescending(m => m.UploadDate)
@@ -117,8 +120,6 @@ namespace students.Controllers
             if (material == null) return NotFound("החומר לא נמצא");
 
             var publicIdClean = material.CloudFileName;
-
-            // זיהוי סוג המשאב מול Cloudinary (קובץ כללי מול תמונה)
             var resourceType = material.UserFileName.ToLower().EndsWith(".pdf") ? "raw" : "image";
 
             var result = await _cloudinaryService.DeleteImageAsync(publicIdClean, resourceType);

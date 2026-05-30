@@ -14,6 +14,7 @@ namespace students.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // 1. הגדרת מפתחות ראשיים (הקוד הקיים שלך)
             modelBuilder.Entity<StudentInCourse>()
                 .HasKey(sc => new { sc.StudentId, sc.CourseId });
 
@@ -25,6 +26,13 @@ namespace students.Data
 
             modelBuilder.Entity<Material>()
                 .HasKey(m => m.MaterialId);
+
+            // 2. הגדרת הקשר והמחיקה המשורשרת (התיקון החדש עבור אסתי)
+            modelBuilder.Entity<Material>()
+                .HasOne<Course>()                       // לכל חומר לימודי יש קורס אחד אליו הוא שייך
+                .WithMany()                             // לקורס אחד יכולים להיות חומרים לימודיים רבים
+                .HasForeignKey(m => m.RelatedCourseId)  // שדה הקישור (המפתח הזר) בטבלת Materials
+                .OnDelete(DeleteBehavior.Cascade);      // הפעלת מחיקה משורשרת אוטומטית (Cascade Delete)
         }
     }
 }
